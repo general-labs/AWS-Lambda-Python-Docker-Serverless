@@ -1,0 +1,14 @@
+service: LambdaPythong
+provider:
+  name: aws
+  runtime: python3.7
+  region: us-east-1
+functions:
+  hello:
+    handler: src/index.hello
+    events:
+      - http:
+          path: sky-data
+          method: any
+
+

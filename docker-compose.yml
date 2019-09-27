@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  serverless:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - aws_access_key_id=$aws_access_key_id
+        - aws_secret_access_key=$aws_secret_access_key
+    tty: true
+    stdin_open: true
+    image: serverless
+    working_dir: /app
+    volumes:
+      - ./src:/app/src
+      #- .:/app
+    container_name: serverless
+    env_file:
+      - .env.docker
+    networks:
+      - serverless-network
+    #environment:
+    #  - aws_access_key_id=$aws_access_key_id
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+networks:
+  serverless-network:
+    driver: bridge

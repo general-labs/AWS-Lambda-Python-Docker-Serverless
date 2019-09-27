@@ -1,0 +1,9 @@
+simplejson==3.16.0
+requests==2.18.3
+BeautifulSoup4
+urlopen
+nltk
+pandas
+numpy
+lxml
+networkx
