@@ -1,5 +1,5 @@
 simplejson==3.16.0
-requests==2.18.3
+requests==2.20.0
 BeautifulSoup4
 urlopen
 nltk
