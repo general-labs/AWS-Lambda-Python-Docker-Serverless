@@ -10,8 +10,13 @@ plugins:
 custom:
   pythonRequirements:
     dockerizePip: true
+    #fileName: requirements-prod.txt
     #dockerSsh: true
     #dockerFile: ./path/to/Dockerfile
+    #dockerBuildCmdExtraArgs: ["--build-arg", "MY_GREAT_ARG=123"]
+    #dockerRunCmdExtraArgs: ["-v", "${env:PWD}:/my-app"]
+    #noDeploy:
+    #  - pytest
 
 
 functions:
