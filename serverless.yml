@@ -3,6 +3,17 @@ provider:
   name: aws
   runtime: python3.7
   region: us-east-1
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    #dockerSsh: true
+    #dockerFile: ./path/to/Dockerfile
+
+
 functions:
   hello:
     handler: src/index.hello
